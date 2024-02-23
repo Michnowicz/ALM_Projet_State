@@ -1,0 +1,18 @@
+.Summary {
+    width: 68%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 6% 10% 0% 10%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.summaryOffer {
+    margin-top: 10px;
+    width: 100%;
+    background-color: hsl(231, 100%, 99%);
+    padding: 2rem;
+    border-radius: 8px;
+}

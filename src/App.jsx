@@ -4,6 +4,7 @@ import Navigation from './components/navigation/Navigation'
 import Info from './components/Info/Info.jsx'
 import Plan from './components/Plan/Plan.jsx'
 import Addons from './components/Addons/Addons.jsx'
+import Summary from './components/Summary/Summary.jsx'
 
 function App() {
   
@@ -15,7 +16,9 @@ function App() {
 
         {/* <Info/> */}
         {/* <Plan/> */}
-        <Addons/>
+        {/* <Addons/> */}
+        <Summary />
+
 
       </div>
     </div>
