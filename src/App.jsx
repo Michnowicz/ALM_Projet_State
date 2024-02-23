@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Navigation from './components/navigation/Navigation'
 import Info from './components/Info/Info'
+import Plan from './components/Plan/Plan'
 
 function App() {
   
@@ -11,7 +12,9 @@ function App() {
       <div className='mainContainer'>
         <Navigation/>
 
-        <Info/>
+        {/* <Info/> */}
+        <Plan/>
+
       </div>
     </div>
   )

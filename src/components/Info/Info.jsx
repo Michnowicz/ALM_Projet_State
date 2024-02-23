@@ -17,21 +17,21 @@ export default function Info() {
 
             <div className="Form">
                 <div className="inputDiv">
-                    <label htmlFor="name">Your name is: {name}</label>
+                    <label htmlFor="name">Your name is : {name}</label>
                     <input type="text" id="name" placeholder="Vingt-Six" />
                 </div>
                 <div className="inputDiv">
-                    <label htmlFor="email">Your email is: {name}</label>
+                    <label htmlFor="email">Your email is : {name}</label>
                     <input type="email" id="email" placeholder="vingt_six@email.com" />
                 </div>
                 <div className="inputDiv">
-                    <label htmlFor="phone">Your email is: {name}</label>
+                    <label htmlFor="phone">Your phone number is : {name}</label>
                     <input type="text" id="phone" placeholder="e.g. +1 234 567 890" />
                 </div>
             </div>
 
-            <div className="BtnNext">
-                <button>Next Step</button>
+            <div className="BtnDiv">
+                <button className="BtnNext">Next Step</button>
             </div>
 
         </div>

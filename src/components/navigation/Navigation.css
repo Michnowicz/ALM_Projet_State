@@ -1,17 +1,17 @@
 .Navigation {
     height: 100%;
-    width: 30%;
+    width: 32%;
     border-radius: 16px;
     background-image: url("../../assets/img/bg-sidebar-desktop.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     box-sizing: border-box;
-    padding: 2.2rem;
+    padding: 2.8rem;
 
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
 }
 
 .Step {
@@ -22,8 +22,8 @@
 
 .roundBorder {
     border: 2px solid white;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
 
     display: flex;
@@ -31,14 +31,18 @@
     justify-content: center;
     color: white;
 }
+.roundBorder p {
+    font-weight: bold;
+    font-size: 1rem;
+}
 
 .stepText p {
     font-size: 0.75rem;
-    color: hsla(229, 24%, 87%, 0.633);
+    color: hsl(229, 24%, 87%);
     font-weight: bold;
 }
 
 .stepText b {
     color: white;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }

@@ -1,5 +1,59 @@
 
 .Info {
-    width: 70%;
+    width: 68%;
     height: 100%;
+    box-sizing: border-box;
+    padding: 6% 10% 0% 10%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+}
+
+.Title h1 {
+    margin-bottom: 8px;
+    color: hsl(213, 96%, 18%);
+}
+.Title p {
+    color: hsl(231, 11%, 63%);
+    font-size: 0.92rem;
+    font-weight: 500;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.inputDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.inputDiv label {
+    color: hsl(213, 96%, 18%);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.inputDiv input {
+    padding: 12px 8px 12px 16px;
+    border: 2px solid hsla(231, 11%, 63%, 0.507);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+
+.BtnDiv {
+    align-self: flex-end;
+}
+
+.BtnDiv .BtnNext {
+    color: white;
+    border: none;
+    padding: 14px 24px 14px 24px;
+    background-color: hsl(213, 96%, 18%);
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 60px;
 }

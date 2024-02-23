@@ -1,0 +1,97 @@
+.Plan {
+    width: 68%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 6% 10% 0% 10%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.allPlan {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem
+}
+
+.offer {
+    border: 2px solid hsla(231, 11%, 63%, 0.433);
+    border-radius: 16px;
+    width: 23%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.offer img {
+    width: 40px;
+    margin-bottom: 40px;
+}
+.offer b {
+    color: hsl(213, 96%, 18%);
+    font-size: 1.1rem;
+}
+.offer p {
+    color: hsl(231, 11%, 63%);
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+
+.toggleBtn {
+    background-color: hsla(228, 100%, 84%, 0.267);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 8px;
+    
+}
+
+.toggleBtn p {
+    font-size: 1.1rem;
+    color: hsl(213, 96%, 18%);
+    font-weight: 500;
+}
+
+.pillBtn {
+    height: 18px;
+    width: 36px;
+    background-color: hsl(213, 96%, 18%);
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    box-sizing: border-box;
+}
+.pillInner {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+
+.switchStep {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.BtnBack {
+    color: hsl(213, 96%, 18%);
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.BtnNext {
+    color: white;
+    border: none;
+    padding: 14px 24px 14px 24px;
+    background-color: hsl(213, 96%, 18%);
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
