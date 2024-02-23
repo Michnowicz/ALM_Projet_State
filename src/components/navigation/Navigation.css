@@ -7,5 +7,38 @@
     background-position: center;
     background-size: cover;
     box-sizing: border-box;
-    padding: 1rem;
+    padding: 2.2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.Step {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.roundBorder {
+    border: 2px solid white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.stepText p {
+    font-size: 0.75rem;
+    color: hsla(229, 24%, 87%, 0.633);
+    font-weight: bold;
+}
+
+.stepText b {
+    color: white;
+    font-size: 0.9rem;
 }

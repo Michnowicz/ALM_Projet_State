@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Navigation from './components/navigation/Navigation'
+import Info from './components/Info/Info'
 
 function App() {
   
@@ -10,6 +11,7 @@ function App() {
       <div className='mainContainer'>
         <Navigation/>
 
+        <Info/>
       </div>
     </div>
   )
