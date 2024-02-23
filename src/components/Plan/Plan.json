@@ -3,18 +3,18 @@
         "src":"./src/assets/img/icon-arcade.svg",
         "title": "Arcade",
         "monthlyPrice":"9",
-        "yearlyPrice":""
+        "yearlyPrice":"90"
     },
     {
         "src":"./src/assets/img/icon-advanced.svg",
         "title": "Advanced",
         "monthlyPrice":"12",
-        "yearlyPrice":""
+        "yearlyPrice":"120"
     },
     {
         "src":"./src/assets/img/icon-pro.svg",
         "title": "Pro",
         "monthlyPrice":"15",
-        "yearlyPrice":""
+        "yearlyPrice":"150"
     }
 ]
