@@ -7,6 +7,9 @@ import Addons from './components/Addons/Addons.jsx'
 import Summary from './components/Summary/Summary.jsx'
 
 function App() {
+
+  let [test, setTest] = useState('test')
+  let [display, setDisplay] = useState('info')
   
 
   return (
@@ -14,11 +17,10 @@ function App() {
       <div className='mainContainer'>
         <Navigation/>
 
-        {/* <Info/> */}
-        {/* <Plan/> */}
-        {/* <Addons/> */}
-        <Summary />
-
+        <Info display={setDisplay} hidden={display != 'info' ? 'hidden': 'Info'}/>
+        <Plan display={setDisplay} hidden={display != 'plan' ? 'hidden': 'Info'}/>
+        <Addons display={setDisplay} hidden={display != 'addons' ? 'hidden': 'Info'}/>
+        <Summary display={setDisplay} hidden={display != 'summary' ? 'hidden': 'Info'}/>
 
       </div>
     </div>

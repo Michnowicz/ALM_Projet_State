@@ -1,10 +1,16 @@
 import "./Summary.css"
 
-export default function Summary() {
+export default function Summary({display, hidden}) {
     
 
+
+    // change diplay on click to change component in app
+    function handlePrevious() {
+        display('addons')
+    }
+
     return(
-        <div className="Summary">
+        <div className={hidden}>
 
             <div className="Title">
                 <h1>Finishing up</h1>
@@ -44,7 +50,7 @@ export default function Summary() {
 
 
             <div className="switchStep">
-                <button className="BtnBack">Go Back</button>
+                <button className="BtnBack" onClick={handlePrevious}>Go Back</button>
                 <button className="BtnNext">Confirm</button>
             </div>
 

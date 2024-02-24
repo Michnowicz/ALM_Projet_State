@@ -1,10 +1,20 @@
 import "./Plan.css"
 import Data from "./Plan.json"
 
-export default function Plan() {
+export default function Plan({display, hidden}) {
+
+
+    // change diplay on click to change component in app
+    function handlePrevious() {
+        display('info')
+    }
+    // change diplay on click to change component in app
+    function handleNext() {
+        display('addons')
+    }
     
     return(
-        <div className="Plan">
+        <div className={hidden}>
             <div className="Title">
                 <h1>Select your plan</h1>
                 <p>You have the option of monthly or yearly billing</p>
@@ -32,8 +42,8 @@ export default function Plan() {
             </div>
 
             <div className="switchStep">
-                <button className="BtnBack">Go Back</button>
-                <button className="BtnNext">Next Step</button>
+                <button className="BtnBack" onClick={handlePrevious}>Go Back</button>
+                <button className="BtnNext" onClick={handleNext}>Next Step</button>
             </div>
 
         </div>

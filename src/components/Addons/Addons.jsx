@@ -3,11 +3,21 @@ import Data from "./Addons.json"
 
 
 
-export default function Addons(params) {
+export default function Addons({display, hidden}) {
+
+
+    // change diplay on click to change component in app
+    function handlePrevious() {
+        display('plan')
+    }
+    // change diplay on click to change component in app
+    function handleNext() {
+        display('summary')
+    }
     
 
     return(
-        <div className="Addons">
+        <div className={hidden}>
 
             <div className="Title">
                 <h1>Pick add-ons</h1>
@@ -46,8 +56,8 @@ export default function Addons(params) {
             </div>
 
             <div className="switchStep">
-                <button className="BtnBack">Go Back</button>
-                <button className="BtnNext">Next Step</button>
+                <button className="BtnBack" onClick={handlePrevious}>Go Back</button>
+                <button className="BtnNext" onClick={handleNext}>Next Step</button>
             </div>
             
         </div>
