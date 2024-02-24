@@ -2,7 +2,7 @@ import { useState } from "react"
 import "./Info.css"
 
 
-export default function Info({display, hidden}) {
+export default function Info({setDisplay, hidden}) {
 
     let [name, setName] = useState('')
     let [email, setEmail] = useState('')
@@ -28,7 +28,7 @@ export default function Info({display, hidden}) {
 
     // change diplay on click to change component in app
     function handleNext() {
-        display('plan')
+        setDisplay('plan')
     }
 
     return(

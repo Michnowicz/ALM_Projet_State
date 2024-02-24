@@ -10,6 +10,7 @@ function App() {
 
   let [display, setDisplay] = useState('info')
   let [plan, setPlan] = useState('')
+  let [price, setPrice] = useState('Monthly')
   
 
   return (
@@ -17,8 +18,8 @@ function App() {
       <div className='mainContainer'>
         <Navigation/>
 
-        <Info display={setDisplay} hidden={display != 'info' ? 'hidden': 'Info'}/>
-        <Plan plan={plan} setPlan={setPlan} display={setDisplay} hidden={display != 'plan' ? 'hidden': 'Info'}/>
+        <Info setDisplay={setDisplay} hidden={display != 'info' ? 'hidden': 'Info'}/>
+        <Plan price={price} setPrice={setPrice} plan={plan} setPlan={setPlan} display={setDisplay} hidden={display != 'plan' ? 'hidden': 'Info'}/>
         <Addons display={setDisplay} hidden={display != 'addons' ? 'hidden': 'Info'}/>
         <Summary display={setDisplay} hidden={display != 'summary' ? 'hidden': 'Info'}/>
 

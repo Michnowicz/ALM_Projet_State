@@ -1,7 +1,7 @@
 import "./Plan.css"
 import Data from "./Plan.json"
 
-export default function Plan({display, hidden, plan, setPlan}) {
+export default function Plan({display, hidden, plan, setPlan, price, setPrice}) {
 
     // change diplay on click to change component in app
     function handlePrevious() {
@@ -16,6 +16,15 @@ export default function Plan({display, hidden, plan, setPlan}) {
     function handleSelection(e) {
         if (e.target.title != undefined && e.target.title != '') {
             setPlan(e.target.title)
+        }
+    }
+
+    //change price
+    function handleslide(e) {
+        if (price === 'Monthly') {
+            setPrice('Yearly')
+        } else {
+            setPrice('Monthly')
         }
     }
     
@@ -41,10 +50,12 @@ export default function Plan({display, hidden, plan, setPlan}) {
                 }
             </div>
             
-            <div className="toggleBtn">
-                <p>Monthly</p>
-                <div className="pillBtn"><div className="pillInner"></div></div>
-                <p>Yearly</p>
+            <div className="toggleBtn" onClick={handleslide}>
+                <p className={price === 'Monthly'?'select':'unselect'}>Monthly</p>
+                <div id={price === 'Monthly'?'month':'year'} className="pillBtn">
+                    <div className="pillInner"></div>
+                </div>
+                <p className={price === 'Yearly'?'select':'unselect'}>Yearly</p>
             </div>
 
             <div className="switchStep">
