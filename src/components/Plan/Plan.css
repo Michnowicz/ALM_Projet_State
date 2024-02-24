@@ -22,6 +22,7 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 .offer img {
     width: 40px;
@@ -35,6 +36,11 @@
     color: hsl(231, 11%, 63%);
     font-weight: bold;
     font-size: 0.95rem;
+}
+
+#chosen {
+    border: 2px solid hsl(243, 100%, 62%);
+    background-color: hsl(229, 24%, 87%);
 }
 
 

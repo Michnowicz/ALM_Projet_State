@@ -1,8 +1,7 @@
 import "./Plan.css"
 import Data from "./Plan.json"
 
-export default function Plan({display, hidden}) {
-
+export default function Plan({display, hidden, plan, setPlan}) {
 
     // change diplay on click to change component in app
     function handlePrevious() {
@@ -12,6 +11,13 @@ export default function Plan({display, hidden}) {
     function handleNext() {
         display('addons')
     }
+
+    //change useState of plan
+    function handleSelection(e) {
+        if (e.target.title != undefined && e.target.title != '') {
+            setPlan(e.target.title)
+        }
+    }
     
     return(
         <div className={hidden}>
@@ -20,15 +26,15 @@ export default function Plan({display, hidden}) {
                 <p>You have the option of monthly or yearly billing</p>
             </div>
 
-            <div className="allPlan">
+            <div className="allPlan" onClick={handleSelection}>
                 {
                     Data.map(
                         (d,i) =>
                         (
-                            <div key={i} className="offer">
-                                <img src={d.src} alt="" />
-                                <b>{d.title}</b>
-                                <p>${d.monthlyPrice}/mo</p>
+                            <div title={d.title} key={i} className="offer" id={plan === d.title ? 'chosen' : ''}>
+                                <img title={d.title} src={d.src} alt="" />
+                                <b title={d.title}>{d.title}</b>
+                                <p title={d.title}>${d.monthlyPrice}/mo</p>
                             </div>
                         )
                     )

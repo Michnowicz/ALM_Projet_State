@@ -8,8 +8,8 @@ import Summary from './components/Summary/Summary.jsx'
 
 function App() {
 
-  let [test, setTest] = useState('test')
   let [display, setDisplay] = useState('info')
+  let [plan, setPlan] = useState('')
   
 
   return (
@@ -18,7 +18,7 @@ function App() {
         <Navigation/>
 
         <Info display={setDisplay} hidden={display != 'info' ? 'hidden': 'Info'}/>
-        <Plan display={setDisplay} hidden={display != 'plan' ? 'hidden': 'Info'}/>
+        <Plan plan={plan} setPlan={setPlan} display={setDisplay} hidden={display != 'plan' ? 'hidden': 'Info'}/>
         <Addons display={setDisplay} hidden={display != 'addons' ? 'hidden': 'Info'}/>
         <Summary display={setDisplay} hidden={display != 'summary' ? 'hidden': 'Info'}/>
 
