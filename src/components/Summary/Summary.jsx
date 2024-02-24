@@ -48,12 +48,6 @@ export default function Summary({display, hidden}) {
                 <b>$ /mo</b>
             </div>
 
-
-            <div className="switchStep">
-                <button className="BtnBack" onClick={handlePrevious}>Go Back</button>
-                <button className="BtnNext">Confirm</button>
-            </div>
-
         </div>
     )
 }

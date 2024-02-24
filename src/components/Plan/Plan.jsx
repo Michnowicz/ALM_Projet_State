@@ -43,7 +43,12 @@ export default function Plan({display, hidden, plan, setPlan, price, setPrice}) 
                             <div title={d.title} key={i} className="offer" id={plan === d.title ? 'chosen' : ''}>
                                 <img title={d.title} src={d.src} alt="" />
                                 <b title={d.title}>{d.title}</b>
-                                <p title={d.title}>${d.monthlyPrice}/mo</p>
+                                {price === 'Monthly'
+                                    ?
+                                    <p title={d.title}>${d.monthlyPrice}/mo</p>
+                                    :
+                                    <p title={d.title}>${d.yearlyPrice}/yr</p>
+                                } 
                             </div>
                         )
                     )
@@ -56,11 +61,6 @@ export default function Plan({display, hidden, plan, setPlan, price, setPrice}) 
                     <div className="pillInner"></div>
                 </div>
                 <p className={price === 'Yearly'?'select':'unselect'}>Yearly</p>
-            </div>
-
-            <div className="switchStep">
-                <button className="BtnBack" onClick={handlePrevious}>Go Back</button>
-                <button className="BtnNext" onClick={handleNext}>Next Step</button>
             </div>
 
         </div>

@@ -3,18 +3,7 @@ import Data from "./Addons.json"
 
 
 
-export default function Addons({display, hidden}) {
-
-
-    // change diplay on click to change component in app
-    function handlePrevious() {
-        display('plan')
-    }
-    // change diplay on click to change component in app
-    function handleNext() {
-        display('summary')
-    }
-    
+export default function Addons({display, hidden}) {   
 
     return(
         <div className={hidden}>
@@ -53,11 +42,6 @@ export default function Addons({display, hidden}) {
                     )
                 )
             }
-            </div>
-
-            <div className="switchStep">
-                <button className="BtnBack" onClick={handlePrevious}>Go Back</button>
-                <button className="BtnNext" onClick={handleNext}>Next Step</button>
             </div>
             
         </div>

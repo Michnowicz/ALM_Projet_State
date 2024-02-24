@@ -1,9 +1,7 @@
 
 .Info {
-    width: 68%;
+    width: 100%;
     height: 100%;
-    box-sizing: border-box;
-    padding: 6% 10% 0% 10%;
 
     display: flex;
     flex-direction: column;
@@ -48,19 +46,5 @@
 }
 
 
-.BtnDiv {
-    align-self: flex-end;
-}
-
-.BtnDiv .BtnNext {
-    color: white;
-    border: none;
-    padding: 14px 24px 14px 24px;
-    background-color: hsl(213, 96%, 18%);
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 60px;
-}
 
 

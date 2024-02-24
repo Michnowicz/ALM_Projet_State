@@ -54,10 +54,6 @@ export default function Info({setDisplay, hidden}) {
                 </div>
             </div>
 
-            <div className="BtnDiv">
-                <button className="BtnNext" onClick={handleNext}>Next Step</button>
-            </div>
-
         </div>
     )
 }
