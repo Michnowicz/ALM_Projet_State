@@ -1,9 +1,22 @@
+import { useState } from "react"
 import "./Addons.css"
 import Data from "./Addons.json"
 
 
 
-export default function Addons({display, hidden}) {   
+export default function Addons({display, hidden, price,addonsChoosed, setAddonsChoosed}) {   
+
+    function handleClick(e) {
+        console.log(e.target);
+        // let newAddonsChoosed =  addonsChoosed.map((a, i)=>{
+        //     if (e.target === i) {
+        //         return !a
+        //     } else {
+        //         return a
+        //     }
+        // })
+        // setAddonsChoosed(newAddonsChoosed)
+    }
 
     return(
         <div className={hidden}>
@@ -19,23 +32,28 @@ export default function Addons({display, hidden}) {
                     (d,i) => 
                     (
 
-                            <div key={i} className="AddOn">
+                            <div select={d.title} key={i} className={addonsChoosed[i] === true ? 'AddOn clicked' : 'AddOn'} onClick={handleClick}>
 
-                                <div className="AddOnLeftContainer">
-                                    <div className="checkDiv">
-                                        <div className="checkBox">
-                                            <div className="arrow"></div>
+                                <div select={d.title} className="AddOnLeftContainer">
+                                    <div select={d.title} className="checkDiv">
+                                        <div select={d.title} className="checkBox">
+                                            <div select={d.title} className="arrow"></div>
                                         </div>
                                     </div>
 
-                                    <div className="textDiv">
-                                        <b>{d.title}</b>
-                                        <p>{d.description}</p>
+                                    <div select={d.title} className="textDiv">
+                                        <b select={d.title}>{d.title}</b>
+                                        <p select={d.title}>{d.description}</p>
                                     </div>
                                 </div>                                
 
-                                <div className="priceDiv">
-                                    <p>+${d.yearly}/yr</p>
+                                <div select={d.title} className="priceDiv">
+                                    {
+                                    price === 'Monthly' ?
+                                    <p select={d.title}>+${d.monthly}/mo</p>
+                                    :
+                                    <p select={d.title}>+${d.yearly}/yr</p>
+                                    }
                                 </div>
 
                             </div>

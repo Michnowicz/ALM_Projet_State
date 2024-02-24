@@ -14,22 +14,23 @@ function App() {
   let [display, setDisplay] = useState('info')
   let [plan, setPlan] = useState('')
   let [price, setPrice] = useState('Monthly')
+  let [addonsChoosed, setAddonsChoosed] = useState([false, false, false])
   
 
+  //variables used to change the display of topDiv
   let [tag, setTag] = useState(['info', 'plan', 'addons', 'summary'])
   let [count, setCount] = useState(0)
-
+  //change the display of topDiv
   useEffect(()=>{
     setDisplay(tag[count])
   },[count])
-
-  // change diplay on click to change component in app
+  // change count on click used to change display
   function handlePrevious() {
     if (count > 0) {
       setCount(count - 1)
     }
   }
-  // change diplay on click to change component in app
+  // change count on click used to change display
   function handleNext() {
     if (count < (tag.length-1)) {
       setCount(count + 1)
@@ -44,10 +45,10 @@ function App() {
 
         <div className='rightDiv'>
           <div className='topDiv'>
-            <Info setDisplay={setDisplay} hidden={display != 'info' ? 'hidden': 'Info'}/>
-            <Plan price={price} setPrice={setPrice} plan={plan} setPlan={setPlan} display={setDisplay} hidden={display != 'plan' ? 'hidden': 'Info'}/>
-            <Addons display={setDisplay} hidden={display != 'addons' ? 'hidden': 'Info'}/>
-            <Summary display={setDisplay} hidden={display != 'summary' ? 'hidden': 'Info'}/>
+            <Info hidden={display != 'info' ? 'hidden': 'Info'}/>
+            <Plan price={price} setPrice={setPrice} plan={plan} setPlan={setPlan} hidden={display != 'plan' ? 'hidden': 'Info'}/>
+            <Addons hidden={display != 'addons' ? 'hidden': 'Info'} price={price} addonsChoosed={addonsChoosed} setAddonsChoosed={setAddonsChoosed} />
+            <Summary hidden={display != 'summary' ? 'hidden': 'Info'}/>
           </div>
           
           <div className="switchStep">
@@ -69,6 +70,10 @@ function App() {
         </div>
         
 
+      </div>
+
+      <div className='test'>
+        {addonsChoosed}
       </div>
     </div>
   )
