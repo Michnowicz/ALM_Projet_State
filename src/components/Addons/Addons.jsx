@@ -1,10 +1,10 @@
-import { useState } from "react"
 import "./Addons.css"
-import Data from "./Addons.json"
+import AddonsData from "./Addons.json"
 
 
 
-export default function Addons({display, hidden, price,addonsChoosed, setAddonsChoosed}) {   
+
+export default function Addons({hidden, price,addonsChoosed, setAddonsChoosed, plan}) {  
 
     function handleClick(e) {
         let newAddonsChoosed =  addonsChoosed.map((a, i)=>{
@@ -27,7 +27,7 @@ export default function Addons({display, hidden, price,addonsChoosed, setAddonsC
 
             <div className="offers">
             {
-                Data.map(
+                AddonsData.map(
                     (d,i) => 
                     (
 

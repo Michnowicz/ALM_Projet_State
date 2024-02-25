@@ -48,7 +48,7 @@ function App() {
             <Info hidden={display != 'info' ? 'hidden': 'Info'}/>
             <Plan price={price} setPrice={setPrice} plan={plan} setPlan={setPlan} hidden={display != 'plan' ? 'hidden': 'Info'}/>
             <Addons hidden={display != 'addons' ? 'hidden': 'Info'} price={price} addonsChoosed={addonsChoosed} setAddonsChoosed={setAddonsChoosed} />
-            <Summary hidden={display != 'summary' ? 'hidden': 'Info'}/>
+            <Summary display={display} price={price} plan={plan} addonsChoosed={addonsChoosed} hidden={display != 'summary' ? 'hidden': 'Info'}/>
           </div>
           
           <div className="switchStep">
@@ -76,6 +76,7 @@ function App() {
         <p>{addonsChoosed[0] === false ? 'false' : 'true'}</p>
         <p>{addonsChoosed[1] === false ? 'false' : 'true'}</p>
         <p>{addonsChoosed[2] === false ? 'false' : 'true'}</p>
+        <p>{display}</p>
       </div>
     </div>
   )

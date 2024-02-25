@@ -1,13 +1,46 @@
+import { useEffect, useState } from "react"
 import "./Summary.css"
+import Addons from "../Addons/Addons.json"
+import Plans from "../Plan/Plan.json"
 
-export default function Summary({display, hidden}) {
+export default function Summary({display, hidden, addonsChoosed, plan, price }) {
+
+    let [count, setCount] = useState(0)
+    let [addonPrice, setAddonPrice] = useState([])
+
+
+    useEffect(()=>{
+        Plans.map((p, i)=>{
+            if (p.title === plan) {
+                if (price === 'Monthly') {
+                    setCount(p.monthlyPrice + addonPrice[0]+ addonPrice[1]+ addonPrice[2])
+                } else {
+                    setCount(p.yearlyPrice + addonPrice[0]+ addonPrice[1]+ addonPrice[2])
+                }
+                
+            }
+            
+        })
+
+    },[addonPrice])
+
+    useEffect(()=>{
+        if (display === 'summary') {
+            let newAddonPrice = Addons.map((a, i)=>{
+                if (addonsChoosed[i] === true) {
+                    if (price === 'Monthly') {
+                        return a.monthly
+                    } else if (price === 'Yearly') {
+                        return a.yearly
+                    }
+                } else {
+                    return 0
+                }
+            })
+            setAddonPrice(newAddonPrice)
+        }
+    },[display])
     
-
-
-    // change diplay on click to change component in app
-    function handlePrevious() {
-        display('addons')
-    }
 
     return(
         <div className={hidden}>
@@ -22,30 +55,62 @@ export default function Summary({display, hidden}) {
                 <div className="selectedPlan">
                     {/* Mettre props selon le plan sélectionné */}
                     <div className="planText">
-                        <b>Change to props</b>
+                        <b>{plan}({price})</b>
                         <p>Change</p>
                     </div>
                     <div className="planPrice">
-                        <p>$/mo</p>
+                        {
+                            Plans.map((p,i) => 
+                            (
+                                <p key={i}>{(p.title == plan && price == 'Monthly') ? 
+                                `$${p.monthlyPrice}/mo`
+                                : 
+                                (p.title == plan && price == 'Yearly') ?
+                                `$${p.yearlyPrice}/yr`
+                                :
+                                ''
+                                }</p>
+                            ))
+                        }
+                        
                     </div>
                 </div>
 
                 <hr />
 
                 <div className="selectedAddons">
-                {/* Mettre un map par rapport aux addons sélectionnés */}
-                    <div className="addonText">
-                        <p>Service</p>
-                    </div>
-                    <div className="addonPrice">
-                        <p>$/mo</p>
-                    </div>
+                        {
+                            Addons.map((addOn, i)=>(
+                                <div key={i} className="selectedAddon">
+                                    <div className="addonText">
+                                        {
+                                            addonsChoosed[i] === true ? 
+                                            <p>{addOn.title}</p> 
+                                            : 
+                                            <p className="hidden"></p>
+                                        }
+                                    </div>
+                                    <div className="addonPrice">
+                                        {
+                                            (addonsChoosed[i] === true && price === 'Monthly') ? 
+                                            `$${addOn.monthly}/mo`
+                                            :
+                                            (addonsChoosed[i] === true && price === 'Yearly') ?
+                                            `$${addOn.yearly}/yr`
+                                            :
+                                            ''
+                                        }
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    
                 </div>
             </div>
 
             <div className="summaryTotal">
-                <p>Total (usestate month)</p>
-                <b>$ /mo</b>
+                <p>{price === 'Monthly' ? `Total (per month)` : `Total (per Year)`}</p>
+                <b>{price === 'Monthly' ? `$${count}/mo` : `$${count}/yr`}</b>
             </div>
 
         </div>

@@ -56,10 +56,16 @@ hr {
 .selectedAddons {
     margin-top: 32px;
     width: 100%;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.selectedAddon {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 16px;
 }
 
 .addonText p {
