@@ -73,7 +73,9 @@ function App() {
       </div>
 
       <div className='test'>
-        {addonsChoosed}
+        <p>{addonsChoosed[0] === false ? 'false' : 'true'}</p>
+        <p>{addonsChoosed[1] === false ? 'false' : 'true'}</p>
+        <p>{addonsChoosed[2] === false ? 'false' : 'true'}</p>
       </div>
     </div>
   )

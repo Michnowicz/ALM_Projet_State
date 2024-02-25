@@ -45,7 +45,27 @@
     border: 2px solid hsl(231, 11%, 63%);
     border-radius: 3px;
     cursor: pointer;
-    
+    display: flex;
+    justify-content: center;
+}
+.checkBoxClicked {
+    background-color: hsl(243, 100%, 62%);
+    height: 12px;
+    aspect-ratio: 1/1;
+    border: 2px solid hsl(243, 100%, 62%);
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.arrow {
+    height: 8px;
+    aspect-ratio: 1/2;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    position: relative;
+    rotate: 45deg;
 }
 
 .textDiv {
