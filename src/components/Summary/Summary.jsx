@@ -3,9 +3,8 @@ import "./Summary.css"
 import Addons from "../Addons/Addons.json"
 import Plans from "../Plan/Plan.json"
 
-export default function Summary({display, hidden, addonsChoosed, plan, price }) {
+export default function Summary({display, total, setTotal, setDisplay, setCount, hidden, addonsChoosed, plan, price }) {
 
-    let [count, setCount] = useState(0)
     let [addonPrice, setAddonPrice] = useState([])
 
 
@@ -13,9 +12,9 @@ export default function Summary({display, hidden, addonsChoosed, plan, price }) 
         Plans.map((p, i)=>{
             if (p.title === plan) {
                 if (price === 'Monthly') {
-                    setCount(p.monthlyPrice + addonPrice[0]+ addonPrice[1]+ addonPrice[2])
+                    setTotal(p.monthlyPrice + addonPrice[0]+ addonPrice[1]+ addonPrice[2])
                 } else {
-                    setCount(p.yearlyPrice + addonPrice[0]+ addonPrice[1]+ addonPrice[2])
+                    setTotal(p.yearlyPrice + addonPrice[0]+ addonPrice[1]+ addonPrice[2])
                 }
                 
             }
@@ -40,6 +39,12 @@ export default function Summary({display, hidden, addonsChoosed, plan, price }) 
             setAddonPrice(newAddonPrice)
         }
     },[display])
+
+
+    function handleChange() {
+        setDisplay("plan")
+        setCount(1)
+    }
     
 
     return(
@@ -56,7 +61,7 @@ export default function Summary({display, hidden, addonsChoosed, plan, price }) 
                     {/* Mettre props selon le plan sélectionné */}
                     <div className="planText">
                         <b>{plan}({price})</b>
-                        <p>Change</p>
+                        <p onClick={handleChange}>Change</p>
                     </div>
                     <div className="planPrice">
                         {
@@ -110,7 +115,7 @@ export default function Summary({display, hidden, addonsChoosed, plan, price }) 
 
             <div className="summaryTotal">
                 <p>{price === 'Monthly' ? `Total (per month)` : `Total (per Year)`}</p>
-                <b>{price === 'Monthly' ? `$${count}/mo` : `$${count}/yr`}</b>
+                <b>{price === 'Monthly' ? `$${total}/mo` : `$${total}/yr`}</b>
             </div>
 
         </div>

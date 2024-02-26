@@ -39,7 +39,6 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: 80px;
 }
 .switchLeft {
     width: 50%;

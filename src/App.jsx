@@ -15,6 +15,7 @@ function App() {
   let [plan, setPlan] = useState('')
   let [price, setPrice] = useState('Monthly')
   let [addonsChoosed, setAddonsChoosed] = useState([false, false, false])
+  let [total, setTotal] = useState(0)
   
 
   //variables used to change the display of topDiv
@@ -48,7 +49,7 @@ function App() {
             <Info hidden={display != 'info' ? 'hidden': 'Info'}/>
             <Plan price={price} setPrice={setPrice} plan={plan} setPlan={setPlan} hidden={display != 'plan' ? 'hidden': 'Info'}/>
             <Addons hidden={display != 'addons' ? 'hidden': 'Info'} price={price} addonsChoosed={addonsChoosed} setAddonsChoosed={setAddonsChoosed} />
-            <Summary display={display} price={price} plan={plan} addonsChoosed={addonsChoosed} hidden={display != 'summary' ? 'hidden': 'Info'}/>
+            <Summary total={total} setTotal={setTotal} setCount={setCount} setDisplay={setDisplay} display={display} price={price} plan={plan} addonsChoosed={addonsChoosed} hidden={display != 'summary' ? 'hidden': 'Info'}/>
           </div>
           
           <div className="switchStep">
@@ -70,13 +71,6 @@ function App() {
         </div>
         
 
-      </div>
-
-      <div className='test'>
-        <p>{addonsChoosed[0] === false ? 'false' : 'true'}</p>
-        <p>{addonsChoosed[1] === false ? 'false' : 'true'}</p>
-        <p>{addonsChoosed[2] === false ? 'false' : 'true'}</p>
-        <p>{display}</p>
       </div>
     </div>
   )

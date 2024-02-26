@@ -39,6 +39,7 @@
     color: hsl(231, 11%, 63%);
     font-size: 0.95rem;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .planPrice p {
