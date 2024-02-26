@@ -45,7 +45,7 @@ function App() {
   return (
     <div className='App'>
       <div className='mainContainer'>
-        <Navigation/>
+        <Navigation count={count}/>
 
         <div className={display != 'confirm' ? 'rightDiv' : 'hidden'}>
           <div className='topDiv'>

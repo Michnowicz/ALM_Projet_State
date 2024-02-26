@@ -2,7 +2,7 @@ import "./Navigation.css"
 import Data from "./Navigation.json"
 
 
-export default function Navigation(params) {
+export default function Navigation({count}) {
 
     
 
@@ -12,7 +12,7 @@ export default function Navigation(params) {
             {
                 Data.map((d,i)=>(
                     <div key={i} className="Step">
-                        <div className="roundBorder">
+                        <div className={count === i ? "roundBorder active" : "roundBorder"}>
                             <p>{d.step}</p>
                         </div>
                         <div className="stepText">
