@@ -16,11 +16,8 @@ export default function Summary({display, total, setTotal, setDisplay, setCount,
                 } else {
                     setTotal(p.yearlyPrice + addonPrice[0]+ addonPrice[1]+ addonPrice[2])
                 }
-                
             }
-            
         })
-
     },[addonPrice])
 
     useEffect(()=>{

@@ -10,14 +10,15 @@
 
 .allPlan {
     display: flex;
-    justify-content: space-between;
-    padding: 0.5rem
+    justify-content: center;
+    padding: 0.5rem;
+    gap: 10px;
 }
 
 .offer {
     border: 2px solid hsla(231, 11%, 63%, 0.433);
     border-radius: 16px;
-    width: 23%;
+    width: 20%;
     padding: 1rem;
     display: flex;
     flex-direction: column;
