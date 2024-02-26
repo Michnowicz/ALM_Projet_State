@@ -5,6 +5,7 @@ import Info from './components/Info/Info.jsx'
 import Plan from './components/Plan/Plan.jsx'
 import Addons from './components/Addons/Addons.jsx'
 import Summary from './components/Summary/Summary.jsx'
+import Confirm from './components/Confirm/Confirm.jsx'
 
 
 
@@ -19,7 +20,7 @@ function App() {
   
 
   //variables used to change the display of topDiv
-  let [tag, setTag] = useState(['info', 'plan', 'addons', 'summary'])
+  let [tag, setTag] = useState(['info', 'plan', 'addons', 'summary', 'confirm'])
   let [count, setCount] = useState(0)
   //change the display of topDiv
   useEffect(()=>{
@@ -33,7 +34,9 @@ function App() {
   }
   // change count on click used to change display
   function handleNext() {
-    if (count < (tag.length-1)) {
+    if (count < (tag.length-2)) {
+      setCount(count + 1)
+    } else if (count < (tag.length-1) && total > 0 && plan != '') {
       setCount(count + 1)
     }
   }
@@ -44,7 +47,7 @@ function App() {
       <div className='mainContainer'>
         <Navigation/>
 
-        <div className='rightDiv'>
+        <div className={display != 'confirm' ? 'rightDiv' : 'hidden'}>
           <div className='topDiv'>
             <Info hidden={display != 'info' ? 'hidden': 'Info'}/>
             <Plan price={price} setPrice={setPrice} plan={plan} setPlan={setPlan} hidden={display != 'plan' ? 'hidden': 'Info'}/>
@@ -69,9 +72,12 @@ function App() {
           </div>
           
         </div>
-        
+
+        <Confirm display={display}/>
 
       </div>
+      
+
     </div>
   )
 }

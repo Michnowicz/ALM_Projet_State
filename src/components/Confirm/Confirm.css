@@ -1,0 +1,78 @@
+
+.Confirm {
+    width: 68%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0% 8% 0% 8%;
+}
+
+
+
+.outerCircle {
+    width: 80px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #f77482;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    
+}
+.innerCircle {
+    width: 45px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:  1px 1px 0px #e35464, 
+        2px 2px 0 #e35464, 
+        3px 3px #e35464,
+        4px 4px #e35464,
+        5px 5px #e35464,
+        6px 6px #e35464,
+        7px 7px #e35464,
+        8px 8px #e35464,
+        9px 9px #e35464,
+        10px 10px #e35464,
+        11px 11px #e35464,
+        12px 12px #e35464,
+        13px 13px #e35464,
+        14px 14px #e35464,
+        15px 15px #e35464,
+        16px 16px #e35464,
+        17px 17px #e35464,
+        18px 18px #e35464,
+        19px 19px #e35464,
+        20px 20px #e35464
+    
+}
+
+
+.innerCircle i {
+    color: #e35464;
+    font-size: 1.5rem;
+}
+
+
+
+.confirmText h2 {
+    text-align: center;
+    color: hsl(213, 96%, 18%);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.confirmText p {
+    text-align: center;
+    color: hsl(231, 11%, 63%);
+    font-size: 1.1rem;
+}
